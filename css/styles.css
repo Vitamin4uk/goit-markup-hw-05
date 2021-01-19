@@ -93,6 +93,13 @@ p {
 }
 
 .page-nav-link {
+  position: relative;
+
+  bottom: 0;
+  transition-property: color;
+  transition: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -139,30 +146,24 @@ p {
   fill: #2196f3;
 }
 
-.page-nav-link:hover::after,
-.page-nav-link:focus::after {
-  opacity: 1;
-}
-
-.current::after {
-  opacity: 1;
-}
-
 .page-nav-link::after {
   content: '';
-
   position: absolute;
   left: 0;
   bottom: -2px;
   display: block;
   width: 100%;
   height: 4px;
-  background-color: var(--acent-color);
+  background-color: var(--accent-color);
   border-radius: 2px;
+
   transition: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   opacity: 0;
+}
+
+.current::after {
+  opacity: 1;
 }
 
 /* *!Футер */
